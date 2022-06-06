@@ -10,20 +10,18 @@ block content
       method = "GET",
       url = "https://testing-api-one.herokuapp.com/";
 
-    xhr.open(method, url, true);
-    xhr.onreadystatechange = function () {
-      // In local files, status is 0 upon success in Mozilla Firefox
-      if(xhr.readyState === XMLHttpRequest.DONE) {
-        //let body = xhr.response;
-        xhr.response(function(){
-          let texts = document.createTextNode();
-          texts.appendChild(xhr.response.name);
+    xhr.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        var newArr = JSON.parse(this.response);
+        for(var i=0; i< newArr.length; i++){
           let divs = document.createElement("div");
+          divs.style.marginTop= "10px";
+          divs.style.overflow = "hidden";
+          let texts = document.createTextNode(newArr[i].name);
           divs.appendChild(texts);
-          
-        })
-        body.appendChild(divs);
-        
+          body.appendChild(divs);
       }
-    };
+    }
+    }
+    xhr.open(method, url, true);
     xhr.send();

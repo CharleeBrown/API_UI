@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(cors());
 app.use(function(req,res,next){
-  res.setHeader('Access-Control-Allow-Origin', 'https://testing-api-one.herokuapp.com/');
+  res.setHeader('Access-Control-Allow-Origin', 'https://testing-api-one.herokuapp.com');
   res.setHeader('Access-Control-Allow-Origin', '*');
 
   res.setHeader('Access-Control-Allow-Origin', true);
