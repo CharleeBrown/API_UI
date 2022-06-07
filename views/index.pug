@@ -16,12 +16,12 @@ block content
         for(var i=0; i< newArr.length; i++){
           let divs = document.createElement("div");
           divs.style.marginTop= "10px";
-          divs.style.overflow = "hidden";
           let texts = document.createTextNode(newArr[i].name);
           divs.appendChild(texts);
           body.appendChild(divs);
       }
     }
-    }
+    };
+    
     xhr.open(method, url, true);
     xhr.send();
