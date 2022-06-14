@@ -4,7 +4,7 @@ const xhr = new XMLHttpRequest(),
 method = "POST",
 url = "https://testing-api-one.herokuapp.com/";
 
-function addInfo(){
+function getInfo(){
 var body = document.getElementsByTagName("body")[0];
 xhr.open(method, url, true);
 if(!('withCredentials' in xhr)){
